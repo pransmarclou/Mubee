@@ -23,8 +23,8 @@ namespace Mubee
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(                    
-                      "~/Content/bootstrap-lumen.css",
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap-yeti.css",
                       "~/Content/site.css"));
         }
     }
