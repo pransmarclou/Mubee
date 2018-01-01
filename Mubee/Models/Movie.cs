@@ -1,4 +1,6 @@
-﻿namespace Mubee.Models
+﻿using System;
+
+namespace Mubee.Models
 {
     public class Movie
     {
@@ -16,6 +18,12 @@
             get { return name; }
             set { name = value; }
         }
+
+        public Genre Genre { get; set; }
+        public byte GenreId { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public DateTime DateAdded { get; set; }
+        public int InStock { get; set; }
 
     }
 }
