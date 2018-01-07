@@ -1,4 +1,3 @@
-using System;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -22,10 +21,9 @@ namespace Mubee.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Movie> Movies { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("CodeFirstMubeeConnection", throwIfV1Schema: false)
         {
         }
 

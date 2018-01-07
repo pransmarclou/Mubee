@@ -13,7 +13,7 @@ namespace Mubee.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201801010951056_InitialModel"; }
+            get { return "201801071444554_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

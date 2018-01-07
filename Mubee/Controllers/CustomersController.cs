@@ -10,44 +10,29 @@ namespace Mubee.Controllers
 {
     public class CustomersController : Controller
     {
-        //Used for Database connection
-        private ApplicationDbContext _context;
-
-        public CustomersController()
+        public ViewResult Index()
         {
-            _context = new ApplicationDbContext();
+            var customers = GetCustomers();
+
+            return View(customers);
         }
-        protected override void Dispose(bool disposing)
+
+        public ActionResult Details(int id)
         {
-            _context.Dispose();
+            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            return View(customer);
         }
-        // GET: Customers
-        //public ViewResult Index()
-        //{
 
-        //    var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-
-        //    return View(customers);
-        //}
-
-        //public ActionResult Details(int id)
-        //{
-        //    var customer = _context.Customers.Include(m => m.MembershipType)
-        //        .SingleOrDefault(c => c.Id == id);
-        //    if (customer == null)   
-        //        return HttpNotFound();
-
-        //    return View(customer);
-        //}
-
-        // Not being used anymore, here as an example
         private IEnumerable<Customer> GetCustomers()
         {
             return new List<Customer>
             {
-
-                new Customer { Id = 1, Name = "Douglas Rodriguez" },
-                new Customer { Id = 2, Name = "Gretchen Betancourt" }
+                new Customer { Id = 1, Name = "John Smith" },
+                new Customer { Id = 2, Name = "Mary Williams" }
             };
         }
     }

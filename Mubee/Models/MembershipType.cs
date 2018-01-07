@@ -1,21 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Mubee.Models
 {
     public class MembershipType
     {
-        public byte Id { get; set; }
+        private byte id;
+        private string name;
+        private short signUpFee;
+        private byte durationInMonths;
+        private byte discountRate;
+
+        public byte Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         [Required]
-        [StringLength(255)]
-        public string Name { get; set; }
-        public short SignUpFee { get; set; }
-        public byte DurationInMonths { get; set; }
-        public byte DiscountRate { get; set; }
-        //public MembershipType MembershipType { get; set; }
-        public byte MembershipTypeId { get; set; }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public short SignUpFee
+        {
+            get { return signUpFee; }
+            set { signUpFee = value; }
+        }
+
+        public byte DurationInMonths
+        {
+            get { return durationInMonths; }
+            set { durationInMonths = value; }
+        }
+
+        public byte DiscountRate
+
+        {
+            get { return discountRate; }
+            set { discountRate = value; }
+        }
     }
 }

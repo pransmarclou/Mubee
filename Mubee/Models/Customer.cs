@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Mubee.Models
 {
@@ -10,6 +6,9 @@ namespace Mubee.Models
     {
         private int id;
         private string name;
+        private bool isSubscribedToNewsletter;
+        private MembershipType membershipType;
+        private byte membershipTypeId;
 
         public int Id
         {
@@ -25,15 +24,22 @@ namespace Mubee.Models
             set { name = value; }
         }
 
-        //public MembershipType MembershipType { get; set; }
+        public bool IsSubscribedToNewsletter
+        {
+            get { return isSubscribedToNewsletter; }
+            set { isSubscribedToNewsletter = value; }
+        }
 
-        //[Display(Name = "Membership Type")]
-        //public byte MembershipTypeId { get; set; }
+        public MembershipType MembershipType
+        {
+            get { return membershipType; }
+            set { membershipType = value; }
+        }
 
-        //[Display(Name = "Date of Birth")]
-        //[Min18YearsIfAMember]
-        public DateTime? Birthdate { get; set; }
-
-        public bool IsSubscribedToCustomer { get; set; }
+        public byte MembershipTypeId
+        {
+            get { return membershipTypeId; }
+            set { membershipTypeId = value; }
+        }
     }
 }
