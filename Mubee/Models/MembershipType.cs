@@ -5,7 +5,6 @@ namespace Mubee.Models
     public class MembershipType
     {
         private byte id;
-        private string name;
         private short signUpFee;
         private byte durationInMonths;
         private byte discountRate;
@@ -14,13 +13,6 @@ namespace Mubee.Models
         {
             get { return id; }
             set { id = value; }
-        }
-
-        [Required]
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
         }
 
         public short SignUpFee
