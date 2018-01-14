@@ -15,7 +15,9 @@ namespace Mubee.Models
             get { return id; }
             set { id = value; }
         }
-
+        
+        [Required]
+        [StringLength(255)]
         public string Name
         {
             get { return name; }
