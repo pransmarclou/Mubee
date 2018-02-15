@@ -1,2 +1,2 @@
 # Mubee
-A video rental system based on vidly.
+A video rental system based on vidly (MVC).
